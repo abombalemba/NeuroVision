@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34114.132
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuroVision", "NeuroVision.csproj", "{DA5E5F1F-9CC2-4D56-A8C3-FD174428483F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA5E5F1F-9CC2-4D56-A8C3-FD174428483F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA5E5F1F-9CC2-4D56-A8C3-FD174428483F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA5E5F1F-9CC2-4D56-A8C3-FD174428483F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA5E5F1F-9CC2-4D56-A8C3-FD174428483F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {00A38075-799D-42A1-9405-D5AEE31C251D}
+	EndGlobalSection
+EndGlobal
