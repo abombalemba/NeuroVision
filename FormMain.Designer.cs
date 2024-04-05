@@ -25,10 +25,10 @@ namespace NeuroVision {
         /// </summary>
         private void InitializeComponent() {
             this.formMainPictureBox = new System.Windows.Forms.PictureBox();
-            this.formMainResult = new System.Windows.Forms.Label();
             this.formMainRecognize = new System.Windows.Forms.Button();
             this.formMainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.formMainMenuStripFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.formMainMenuStripFileDraw = new System.Windows.Forms.ToolStripMenuItem();
             this.formMainMenuStripFileOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.formMainMenuStripFileSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.formMainMenuStripFileExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,6 +36,9 @@ namespace NeuroVision {
             this.formMainMenuStripReferenceAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.formMainStatusStrip = new System.Windows.Forms.StatusStrip();
             this.formMainStatusStripVersion = new System.Windows.Forms.ToolStripStatusLabel();
+            this.formMainResult = new System.Windows.Forms.RichTextBox();
+            this.formMainCopy = new System.Windows.Forms.Button();
+            this.formMainLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.formMainPictureBox)).BeginInit();
             this.formMainMenuStrip.SuspendLayout();
             this.formMainStatusStrip.SuspendLayout();
@@ -44,26 +47,19 @@ namespace NeuroVision {
             // formMainPictureBox
             // 
             this.formMainPictureBox.BackColor = System.Drawing.Color.White;
-            this.formMainPictureBox.Location = new System.Drawing.Point(0, 31);
+            this.formMainPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.formMainPictureBox.Location = new System.Drawing.Point(12, 45);
             this.formMainPictureBox.Name = "formMainPictureBox";
-            this.formMainPictureBox.Size = new System.Drawing.Size(782, 340);
+            this.formMainPictureBox.Size = new System.Drawing.Size(559, 358);
             this.formMainPictureBox.TabIndex = 0;
             this.formMainPictureBox.TabStop = false;
             this.formMainPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formMainPictureBox_MouseDown);
             this.formMainPictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.formMainPictureBox_MouseMove);
             this.formMainPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.formMainPictureBox_MouseUp);
             // 
-            // formMainResult
-            // 
-            this.formMainResult.AutoSize = true;
-            this.formMainResult.Location = new System.Drawing.Point(164, 387);
-            this.formMainResult.Name = "formMainResult";
-            this.formMainResult.Size = new System.Drawing.Size(0, 17);
-            this.formMainResult.TabIndex = 1;
-            // 
             // formMainRecognize
             // 
-            this.formMainRecognize.Location = new System.Drawing.Point(0, 377);
+            this.formMainRecognize.Location = new System.Drawing.Point(587, 33);
             this.formMainRecognize.Name = "formMainRecognize";
             this.formMainRecognize.Size = new System.Drawing.Size(141, 37);
             this.formMainRecognize.TabIndex = 2;
@@ -86,29 +82,39 @@ namespace NeuroVision {
             // formMainMenuStripFile
             // 
             this.formMainMenuStripFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.formMainMenuStripFileDraw,
             this.formMainMenuStripFileOpen,
             this.formMainMenuStripFileSeparator,
             this.formMainMenuStripFileExit});
             this.formMainMenuStripFile.Name = "formMainMenuStripFile";
-            this.formMainMenuStripFile.Size = new System.Drawing.Size(59, 24);
+            this.formMainMenuStripFile.Size = new System.Drawing.Size(59, 26);
             this.formMainMenuStripFile.Text = "Файл";
+            // 
+            // formMainMenuStripFileDraw
+            // 
+            this.formMainMenuStripFileDraw.Name = "formMainMenuStripFileDraw";
+            this.formMainMenuStripFileDraw.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.formMainMenuStripFileDraw.Size = new System.Drawing.Size(218, 26);
+            this.formMainMenuStripFileDraw.Text = "Рисовать";
+            this.formMainMenuStripFileDraw.Click += new System.EventHandler(this.formMainMenuStripFileDraw_Click);
             // 
             // formMainMenuStripFileOpen
             // 
             this.formMainMenuStripFileOpen.Name = "formMainMenuStripFileOpen";
-            this.formMainMenuStripFileOpen.Size = new System.Drawing.Size(150, 26);
+            this.formMainMenuStripFileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.formMainMenuStripFileOpen.Size = new System.Drawing.Size(218, 26);
             this.formMainMenuStripFileOpen.Text = "Открыть";
             this.formMainMenuStripFileOpen.Click += new System.EventHandler(this.formMainMenuStripFileOpen_Click);
             // 
             // formMainMenuStripFileSeparator
             // 
             this.formMainMenuStripFileSeparator.Name = "formMainMenuStripFileSeparator";
-            this.formMainMenuStripFileSeparator.Size = new System.Drawing.Size(147, 6);
+            this.formMainMenuStripFileSeparator.Size = new System.Drawing.Size(215, 6);
             // 
             // formMainMenuStripFileExit
             // 
             this.formMainMenuStripFileExit.Name = "formMainMenuStripFileExit";
-            this.formMainMenuStripFileExit.Size = new System.Drawing.Size(150, 26);
+            this.formMainMenuStripFileExit.Size = new System.Drawing.Size(218, 26);
             this.formMainMenuStripFileExit.Text = "Выйти";
             this.formMainMenuStripFileExit.Click += new System.EventHandler(this.formMainMenuStripFileExit_Click);
             // 
@@ -117,7 +123,7 @@ namespace NeuroVision {
             this.formMainMenuStripReference.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.formMainMenuStripReferenceAbout});
             this.formMainMenuStripReference.Name = "formMainMenuStripReference";
-            this.formMainMenuStripReference.Size = new System.Drawing.Size(81, 24);
+            this.formMainMenuStripReference.Size = new System.Drawing.Size(81, 26);
             this.formMainMenuStripReference.Text = "Справка";
             // 
             // formMainMenuStripReferenceAbout
@@ -144,23 +150,57 @@ namespace NeuroVision {
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.formMainStatusStripVersion.Name = "formMainStatusStripVersion";
-            this.formMainStatusStripVersion.Size = new System.Drawing.Size(767, 24);
+            this.formMainStatusStripVersion.Size = new System.Drawing.Size(728, 24);
             this.formMainStatusStripVersion.Spring = true;
-            this.formMainStatusStripVersion.Text = "Версия: 1.0.0";
+            this.formMainStatusStripVersion.Text = "Версия: 1.1.0";
+            // 
+            // formMainResult
+            // 
+            this.formMainResult.BackColor = System.Drawing.Color.White;
+            this.formMainResult.Location = new System.Drawing.Point(587, 163);
+            this.formMainResult.Name = "formMainResult";
+            this.formMainResult.ReadOnly = true;
+            this.formMainResult.Size = new System.Drawing.Size(168, 240);
+            this.formMainResult.TabIndex = 5;
+            this.formMainResult.Text = "";
+            // 
+            // formMainCopy
+            // 
+            this.formMainCopy.Location = new System.Drawing.Point(587, 76);
+            this.formMainCopy.Name = "formMainCopy";
+            this.formMainCopy.Size = new System.Drawing.Size(141, 43);
+            this.formMainCopy.TabIndex = 6;
+            this.formMainCopy.Text = "Скопировать";
+            this.formMainCopy.UseVisualStyleBackColor = true;
+            this.formMainCopy.Click += new System.EventHandler(this.formMainCopy_Click);
+            // 
+            // formMainLabel
+            // 
+            this.formMainLabel.AutoSize = true;
+            this.formMainLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.formMainLabel.Location = new System.Drawing.Point(582, 131);
+            this.formMainLabel.Name = "formMainLabel";
+            this.formMainLabel.Size = new System.Drawing.Size(254, 29);
+            this.formMainLabel.TabIndex = 7;
+            this.formMainLabel.Text = "Распознанный текст";
+            this.formMainLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 453);
+            this.Controls.Add(this.formMainLabel);
+            this.Controls.Add(this.formMainCopy);
+            this.Controls.Add(this.formMainResult);
             this.Controls.Add(this.formMainStatusStrip);
             this.Controls.Add(this.formMainRecognize);
-            this.Controls.Add(this.formMainResult);
             this.Controls.Add(this.formMainPictureBox);
             this.Controls.Add(this.formMainMenuStrip);
             this.MainMenuStrip = this.formMainMenuStrip;
             this.Name = "FormMain";
             this.Text = "NeuroVision";
+            this.Resize += new System.EventHandler(this.FormMain_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.formMainPictureBox)).EndInit();
             this.formMainMenuStrip.ResumeLayout(false);
             this.formMainMenuStrip.PerformLayout();
@@ -174,7 +214,6 @@ namespace NeuroVision {
         #endregion
 
         private System.Windows.Forms.PictureBox formMainPictureBox;
-        private System.Windows.Forms.Label formMainResult;
         private System.Windows.Forms.Button formMainRecognize;
         private System.Windows.Forms.MenuStrip formMainMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem formMainMenuStripFile;
@@ -185,6 +224,10 @@ namespace NeuroVision {
         private System.Windows.Forms.ToolStripMenuItem formMainMenuStripReferenceAbout;
         private System.Windows.Forms.StatusStrip formMainStatusStrip;
         private System.Windows.Forms.ToolStripStatusLabel formMainStatusStripVersion;
+        private System.Windows.Forms.ToolStripMenuItem formMainMenuStripFileDraw;
+        private System.Windows.Forms.RichTextBox formMainResult;
+        private System.Windows.Forms.Button formMainCopy;
+        private System.Windows.Forms.Label formMainLabel;
     }
 }
 
